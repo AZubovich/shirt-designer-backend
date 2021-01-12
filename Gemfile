@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'grape', '~> 1.5', '>= 1.5.1'
 #Add entity to grape
 gem 'grape-entity', '~> 0.8.2'
+#Add CORS to rails app
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
