@@ -17,9 +17,10 @@ module V1
        	  requires :image, type: String, desc: 'Image of the shirt'
         end
         post do
-          error!({ errors: 'Not authorize' }, 401) unless Authorization.current_user(request)
+          error!({ errors: 'Not authorize' }, 401) unless Authorization.authorize(request)
           shirt = Shirt.new(declared(params))
           shirt.image = { data: params[:image] }
+          shirt.user_id = Authorization.current_user.id
           if shirt.save
             { data: shirt }
           else

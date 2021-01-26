@@ -5,4 +5,5 @@ class Shirt < ApplicationRecord
   validates :model, presence: true
 
   has_one_base64_attached :image
+  belongs_to :user
 end
