@@ -4,5 +4,5 @@ class Shirt < ApplicationRecord
   validates :price, presence: true, numericality: true
   validates :model, presence: true
 
-  has_one_attached :image
+  has_one_base64_attached :image
 end

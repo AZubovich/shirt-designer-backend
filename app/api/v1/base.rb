@@ -6,5 +6,7 @@ module V1
 
     mount V1::HealthCheck
     mount V1::Shirts
+    mount V1::Users
+    mount V1::Login
   end
 end

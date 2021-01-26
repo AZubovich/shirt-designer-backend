@@ -37,6 +37,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_storage_base64 (1.1.0)
+      rails (~> 6.0)
     activejob (6.0.3.4)
       activesupport (= 6.0.3.4)
       globalid (>= 0.3.6)
@@ -58,6 +60,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -112,6 +115,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+    jwt (2.2.2)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -238,12 +242,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_storage_base64
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
   grape (~> 1.5, >= 1.5.1)
   grape-entity (~> 0.8.2)
   jbuilder (~> 2.7)
+  jwt (~> 2.2, >= 2.2.2)
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
   puma (~> 4.1)
