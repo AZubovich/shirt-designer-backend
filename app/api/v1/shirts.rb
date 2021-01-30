@@ -2,10 +2,21 @@ module V1
   class Shirts < Grape::API
 
     resource :shirts do
-      desc 'get all shirts'
+      desc 'Get all shirts'
       get do
         shirt = Shirt.all
    		  present shirt, with: Entities::Shirt
+      end
+
+      desc 'Show shirt'
+      params do
+        requires :id, type: Integer, desc: 'Id of the shirt'
+      end
+      route_param :id do
+        get do
+          shirt = Shirt.find(params[:id])
+          present shirt, with: Entities::Shirt 
+        end
       end
 
       desc 'Create new shirt'
