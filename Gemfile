@@ -31,9 +31,9 @@ gem 'active_storage_base64'
 
 #Add API to your application
 gem 'grape', '~> 1.5', '>= 1.5.1'
-#Add entity to grape
+# Add entity to grape
 gem 'grape-entity', '~> 0.8.2'
-#Add CORS to rails app
+# Add CORS to rails app
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -42,6 +42,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Install RSpec for testing your app
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main'
+  end
 end
 
 group :development do
@@ -59,6 +63,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Create factories for rspec tests
+  gem 'factory_bot_rails'
+  # Database cleaner for RSpec tests
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
