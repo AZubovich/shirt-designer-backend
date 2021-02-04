@@ -4,6 +4,7 @@ FactoryBot.define do
     description { 'shirt description' }
     price { 1.11 }
     model { 'model' }
+    association :user, factory: :user, strategy: :create
 
     after(:build) do |shirt|
       shirt.image = { data: 'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA

@@ -1,7 +1,7 @@
 module V1
   class Users < Grape::API
     resource :users do
-      desc 'Create new office'
+      desc 'Create new user'
         params do
           requires :username, type: String, desc: 'User nickname'
           requires :password, type: String, desc: 'User password'

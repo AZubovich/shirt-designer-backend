@@ -9,5 +9,7 @@ FactoryBot.define do
         user.shirts << build(:shirt)
       end
     end
+
+    factory :user_with_shirt, traits: %i[with_shirt]
   end
 end
